@@ -20,7 +20,8 @@ INSERT INTO TURNO VALUES
 
 UPDATE TIPO_VEHICULO SET Tarifa = 20 WHERE TipoVeh_ID = 2;
 
-INSERT INTO VEHICULO VALUES
+INSERT INTO VEHICULO (PLACA, TIPOVEH_ID, FECHA_REGISTRO, MARCA)
+VALUES
 ("ABCD123", 1, "2025-05-06", "TOYOTA"),
 ("AEU321", 2, "2025-05-01", "ALGODMOTO"),
 ("XYZ987", 1, "2025-05-10", "MAZDA"),
@@ -31,20 +32,21 @@ INSERT INTO VEHICULO VALUES
 INSERT INTO PARQUEADERO VALUES
 (1, 10, 8, 2);
 
-INSERT INTO EMPLEADO VALUES
-(1, "Carlos", 1, "Supervisor", 1),
-(2, "Pedrito", 0, "Supervisor", 1),
-(3, "Laura", 1, "Operadora", 1),
-(4, "Andrés", 0, "Vigilante", 1),
-(5, "Marta", 1, "Cajera", 1);
+INSERT INTO EMPLEADO (NOMBRE, TURNO_ID, CARGO, PARQ_ID) 
+VALUES
+("Carlos", 1, "Supervisor", 1),
+("Pedrito", 0, "Supervisor", 1),
+("Laura", 1, "Operadora", 1),
+("Andrés", 0, "Vigilante", 1),
+("Marta", 1, "Cajera", 1);
 
-INSERT INTO REGISTRO (Placa_ID, Empleado_ID, PARQ_ID, Fecha_ingreso, Fecha_salida)
+INSERT INTO REGISTRO (VEH_ID, EMPLEADO_ID, PARQ_ID, Fecha_ingreso, Fecha_salida)
 VALUES 
-("ABCD123", 1, 1, "2025-05-06 08:00:00", "2025-05-06 10:30:00"),
-("AEU321", 2, 1, "2025-05-06 09:00:00", "2025-05-06 12:00:00"),
-("XYZ987", 3, 1, "2025-05-10 07:00:00", "2025-05-10 08:30:00"),
-("LMN456", 4, 1, "2025-05-09 18:00:00", "2025-05-06 20:00:00"),
-("PQR789", 5, 1, "2025-05-11 10:00:00", "2025-05-11 13:30:00");
+(1, 5, 1, "2025-05-06 08:00:00", "2025-05-06 10:30:00"),
+(2, 5, 1, "2025-05-06 09:00:00", "2025-05-06 12:00:00"),
+(3, 5, 1, "2025-05-10 07:00:00", "2025-05-10 08:30:00"),
+(4, 5, 1, "2025-05-09 18:00:00", "2025-05-06 20:00:00"),
+(5, 5, 1, "2025-05-11 10:00:00", "2025-05-11 13:30:00");
 
 INSERT INTO FACTURA (Registro_ID, METODOPAGO_ID, Duracion, TotalPago)
 VALUES 
